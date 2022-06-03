@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import { Character } from "../components/character.component";
 import { SideNav } from "../components/sidenav.component";
+import { AppRouteUi } from "../config/routes";
 
 export type CharacterType = {
   id: number;
@@ -34,7 +35,7 @@ export const CharactersPage = () => {
       <SideNav
         items={characters.map((item) => ({
           title: `${item.firstName} ${item.lastName}`,
-          to: `/characters/${item.id}`,
+          to: AppRouteUi.Character(item.id),
         }))}
       />
 
