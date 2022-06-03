@@ -1,0 +1,86 @@
+<single-spa-router>
+  <!--
+
+    This is the single-spa Layout Definition for your microfrontends.
+    See https://single-spa.js.org/docs/layout-definition/ for more information.
+
+  -->
+
+  <!-- Example layouts you might find helpful:
+
+  <nav>
+    <application name="@org/navbar"></application>
+  </nav>
+  <route path="settings">
+    <application name="@org/settings"></application>
+  </route>
+
+  -->
+
+  <style>
+    * {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+        "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+        "Helvetica Neue", sans-serif;
+    }
+    .home-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 90vh;
+      width: 70vw;
+      margin: auto;
+      text-align: center;
+      line-height: 1.5rem;
+    }
+    .home-content h1 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+    .home-content p {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+    .home-content a {
+      text-decoration: none;
+      color: #ee689f;
+    }
+  </style>
+
+  <main>
+    <nav>
+      <application name="@khan/navbar"></application>
+    </nav>
+    <route path="got">
+      <application name="@khan/first-app"></application>
+    </route>
+    <route path="rnm">
+      <application name="@khan/second-app"></application>
+    </route>
+    <route default>
+      <div class="home-content">
+        <h1>Welcome to a Micro-frontend App</h1>
+        <p>
+          This is a demo of a micro-frontend app built with
+          <a href="https://single-spa.js.org/">Single-Spa</a>. In total three
+          react application was merged together to create this application. They
+          are Rick and Morty app, Game of Thrones app and a Navbar. Click on the
+          navbar to see them.
+        </p>
+        <p>
+          Rick and Morty and Game of Thrones apps were initially created using
+          create-react-app then it was converted to a single-spa app. The steps
+          to convert a react app to a single-spa app will be explained in a blog
+          post.
+        </p>
+        <p>
+          You can see the source code of each application in this
+          <a href="https://github.com/KhanShaheb34/single-spa-app"
+            >Github repository</a
+          >.
+        </p>
+      </div>
+    </route>
+  </main>
+</single-spa-router>

@@ -4,7 +4,7 @@
     "jsx": "react-jsx",
     "declarationDir": "dist"
   },
-  "files": ["src/khan-first-app.tsx"],
+  "files": ["src/khan-navbar.tsx"],
   "include": ["src/**/*"],
   "exclude": ["src/**/*.test*"]
 }

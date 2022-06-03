@@ -1,10 +1,9 @@
 {
   "extends": "ts-config-single-spa",
+  "files": ["src/khan-root-config.ts"],
   "compilerOptions": {
-    "jsx": "react-jsx",
     "declarationDir": "dist"
   },
-  "files": ["src/khan-first-app.tsx"],
   "include": ["src/**/*"],
   "exclude": ["src/**/*.test*"]
 }
