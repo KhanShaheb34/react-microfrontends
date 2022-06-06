@@ -46,6 +46,9 @@
       text-decoration: none;
       color: #ee689f;
     }
+    .not-found {
+      color: #0008;
+    }
   </style>
 
   <main>
@@ -58,7 +61,8 @@
     <route path="rnm">
       <application name="@khan/second-app"></application>
     </route>
-    <route default>
+
+    <route path="/" exact/>
       <div class="home-content">
         <h1>Welcome to a Micro-frontend App</h1>
         <p>
@@ -80,6 +84,12 @@
             >Github repository</a
           >.
         </p>
+      </div>
+    </route>
+    
+    <route default>
+      <div class="home-content">
+        <h1 class="not-found">404 Not Found</h1>
       </div>
     </route>
   </main>
