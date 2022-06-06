@@ -1,0 +1,10 @@
+FROM node:18-alpine
+
+RUN ["mkdir", "/usr/src"]
+COPY ./package.json /usr/src
+WORKDIR /usr/src
+RUN ["npm", "install"]
+
+COPY . /usr/src
+
+CMD [ "npm" , "start" ]
