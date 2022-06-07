@@ -52,6 +52,18 @@
     <!-- Add your organization's prod import map URL to this script's src  -->
     <!-- <script type="systemjs-importmap" src="/importmap.json"></script> -->
 
+    <script type="systemjs-importmap">
+      {
+        "imports": {
+          "@single-spa/welcome": "https://unpkg.com/single-spa-welcome/dist/single-spa-welcome.js",
+          "@khan/root-config": "/khan-root-config.js",
+          "@khan/first-app": "/got/khan-first-app.js",
+          "@khan/second-app": "/rnm/khan-second-app.js",
+          "@khan/navbar": "/nav/khan-navbar.js"
+        }
+      }
+    </script>
+
     <% if (isLocal) { %>
     <script type="systemjs-importmap">
       {

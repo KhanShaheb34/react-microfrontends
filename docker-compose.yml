@@ -2,17 +2,21 @@ version: "3.9"
 services:
   gotapp:
     build: ./first-app
-    ports:
-      - 8500:8500
+    volumes:
+      - build:/usr/build
   rnmapp:
     build: ./second-app
-    ports:
-      - 8501:8500
+    volumes:
+      - build:/usr/build
   navbar:
     build: ./navbar
-    ports:
-      - 8502:8500
+    volumes:
+      - build:/usr/build
   root:
     build: ./root-config
+    volumes:
+      - build:/usr/build
     ports:
-      - 9000:9000
+      - 5000
+volumes:
+  build:

@@ -1,10 +1,10 @@
 FROM node:18-alpine
 
-RUN ["mkdir", "/usr/src"]
+RUN ["mkdir", "-p", "/usr/src", "/usr/build"]
 COPY ./package.json /usr/src
 WORKDIR /usr/src
-RUN ["npm", "install"]
+RUN ["npm", "i", "--prefer-offline", "--no-audit"]
 
 COPY . /usr/src
-
-CMD [ "npm" , "start", "--", "--port", "8500" ]
+RUN ["npm", "run", "build"]
+RUN ["mv", "/usr/src/dist", "/usr/build/nav"]
