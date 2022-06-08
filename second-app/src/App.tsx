@@ -1,4 +1,4 @@
-import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Link, Navigate, Route, Routes } from "react-router-dom";
 import { HomePage } from "./pages/home";
 import { CharactersPage } from "./pages/characters";
 import { LocationsPage } from "./pages/locations";
@@ -20,6 +20,10 @@ function App() {
             />
           </Link>
           <Routes>
+            <Route
+              path="/"
+              element={<Navigate to={AppRouteUi.Root} replace />}
+            />
             <Route path={AppRouteUi.Root} element={<HomePage />} />
             <Route
               path={`${AppRouteUi.Characters()}/*`}
