@@ -3,20 +3,16 @@ services:
   gotapp:
     build: ./first-app
     volumes:
-      - build:/usr/build
+      - ./build:/usr/build
   rnmapp:
     build: ./second-app
     volumes:
-      - build:/usr/build
+      - ./build:/usr/build
   navbar:
     build: ./navbar
     volumes:
-      - build:/usr/build
+      - ./build:/usr/build
   root:
     build: ./root-config
     volumes:
-      - build:/usr/build
-    ports:
-      - 5000
-volumes:
-  build:
+      - ./build:/usr/build

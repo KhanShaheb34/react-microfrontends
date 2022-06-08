@@ -1,12 +1,11 @@
 FROM node:18-alpine
 
 RUN ["mkdir", "-p", "/usr/src", "/usr/build"]
-COPY ./package.json /usr/src
 WORKDIR /usr/src
-RUN ["npm", "i", "--prefer-offline", "--no-audit"]
+COPY ./package.json .
+COPY ./package-lock.json .
+RUN ["npm", "ci", "--prefer-offline", "--no-audit"]
 
-COPY . /usr/src
+COPY . .
 RUN ["npm", "run", "build"]
-RUN ["cp", "-r", "/usr/src/dist/.", "/usr/build"]
-
-CMD [ "npx", "serve", "/usr/src/dist"]
+CMD ["cp", "-r", "./dist/.", "/usr/build"]
