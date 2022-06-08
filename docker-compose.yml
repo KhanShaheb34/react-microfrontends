@@ -16,3 +16,16 @@ services:
     build: ./root-config
     volumes:
       - ./build:/usr/build
+  nginx:
+    build: ./nginx
+    volumes:
+      - ./build:/usr/share/nginx/html
+    ports:
+      - 9000:80
+    depends_on:
+      - gotapp
+      - rnmapp
+      - navbar
+      - root
+# volumes:
+#   build:

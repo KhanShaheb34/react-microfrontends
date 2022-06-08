@@ -1,6 +1,6 @@
 FROM node:18-alpine
 
-RUN ["mkdir", "-p", "/usr/src", "/usr/build"]
+RUN ["mkdir", "-p", "/usr/src", "/usr/build/nav"]
 WORKDIR /usr/src
 COPY ./package.json .
 COPY ./package-lock.json .
@@ -8,4 +8,4 @@ RUN ["npm", "ci", "--prefer-offline", "--no-audit"]
 
 COPY . .
 RUN ["npm", "run", "build"]
-CMD ["mv", "./dist", "/usr/build/nav"]
+CMD ["cp", "-r", "./dist/.", "/usr/build/nav"]
