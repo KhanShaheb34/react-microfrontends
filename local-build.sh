@@ -19,6 +19,6 @@ echo "============== CLEANING =============="
 rm -rf ./*/dist
 
 echo "============ START SERVER ============"
-npx live-server ./build --port=9001 --host=localhost
+npx live-server ./build --port=9000 --host=localhost
 
 echo "================ DONE ================"

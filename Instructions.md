@@ -241,6 +241,6 @@ Now only one command is enough to build and start a server:
 docker-compose up
 ```
 
-Boom! Now visit `[http://localhost:9000](http://localhost:9000)` to see your beautiful app in production.
+Boom! Now visit [`http://localhost:9000`](http://localhost:9000) to see your beautiful app in production.
 
 > ❗ A demo micro-frontend application is available on this repository. Check it out, of you have any confusion: [KhanShaheb34/react-microfrontend](https://github.com/KhanShaheb34/react-microfrontend)
