@@ -3,29 +3,29 @@ services:
   gotapp:
     build: ./first-app
     volumes:
-      - ./build:/usr/build
+      - build:/usr/build
   rnmapp:
     build: ./second-app
     volumes:
-      - ./build:/usr/build
+      - build:/usr/build
   navbar:
     build: ./navbar
     volumes:
-      - ./build:/usr/build
+      - build:/usr/build
   root:
     build: ./root-config
     volumes:
-      - ./build:/usr/build
+      - build:/usr/build
   nginx:
-    build: ./nginx
+    image: nginx
     volumes:
-      - ./build:/usr/share/nginx/html
+      - build:/usr/share/nginx/html
     ports:
-      - 9000:80
+      - 8080:80
     depends_on:
       - gotapp
       - rnmapp
       - navbar
       - root
-# volumes:
-#   build:
+volumes:
+  build:
