@@ -17,11 +17,11 @@ services:
     volumes:
       - build:/usr/build
   nginx:
-    image: nginx
+    build: ./nginx
     volumes:
       - build:/usr/share/nginx/html
     ports:
-      - 8080:80
+      - 9000:80
     depends_on:
       - gotapp
       - rnmapp
