@@ -1,0 +1,31 @@
+version: "3.9"
+services:
+  gotapp:
+    build: ./first-app
+    volumes:
+      - build:/usr/build
+  rnmapp:
+    build: ./second-app
+    volumes:
+      - build:/usr/build
+  navbar:
+    build: ./navbar
+    volumes:
+      - build:/usr/build
+  root:
+    build: ./root-config
+    volumes:
+      - build:/usr/build
+  nginx:
+    build: ./nginx
+    volumes:
+      - build:/usr/share/nginx/html
+    ports:
+      - 9000:80
+    depends_on:
+      - gotapp
+      - rnmapp
+      - navbar
+      - root
+volumes:
+  build:

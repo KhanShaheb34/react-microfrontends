@@ -1,0 +1,11 @@
+FROM node:18-alpine
+
+RUN ["mkdir", "-p", "/usr/src", "/usr/build/rnm"]
+WORKDIR /usr/src
+COPY ./package.json .
+COPY ./package-lock.json .
+RUN ["npm", "ci", "--prefer-offline", "--no-audit"]
+
+COPY . .
+RUN ["npm", "run", "build"]
+CMD ["cp", "-r", "./dist/.", "/usr/build/rnm"]
