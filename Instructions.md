@@ -154,7 +154,24 @@ Go to [`http://localhost:9000`](http://localhost:9000) and see your beautiful ap
 
 ## Make the application ready for build and deploy
 
-The most interesting part. How’d you make it easy to build and deploy your application? I used docker and nginx for building and serving my application. Here is the `dockerfile` I wrote to build a react app:
+The most interesting part. How’d you make it easy to build and deploy your application?
+
+One thing we have to do before we start writing code for build and deploy. Currently we imported only the development packages of our sub applications to the root app. We have to add another systemjs-importmap for production builds of our sub applications. Add these lines over your local importmap:
+
+```html
+<script type="systemjs-importmap">
+  {
+    "imports": {
+      "@orgname/root-app": "/orgname-root-app.js",
+      "@orgname/first-app": "/first/orgname-first-app.js",
+      "@orgname/second-app": "/second/orgname-second-app.js",
+      "@orgname/navbar": "/nav/orgname-navbar.js"
+    }
+  }
+</script>
+```
+
+I used docker and nginx for building and serving my application. Here is the `dockerfile` I wrote to build a react app:
 
 ```docker
 FROM node:18-alpine
