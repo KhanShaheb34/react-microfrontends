@@ -1,6 +1,6 @@
-# React micro-frontend using [single-spa](https://single-spa.js.org)
+# React micro-frontends using [single-spa](https://single-spa.js.org)
 
-This is a demo application built using micro-frontend architecture with the help of [single-spa](https://single-spa.js.org). If you want to learn about micro-frontend, check these:
+This is a demo application built using micro-frontend architecture with the help of [single-spa](https://single-spa.js.org). If you want to learn about micro-frontends, check these:
 
 - [Micro-frontends.org](https://micro-frontends.org)
 - [Single-SPA **Concept: Microfrontends**](https://single-spa.js.org/docs/microfrontends-concept)
@@ -9,7 +9,7 @@ In this repository I merged (kinda) two react application into one, but can be f
 
 > Full instruction (blog) of how I managed to do so is available here, [React Micro-frontend and Single SPA from create-react-app](https://khanshaheb.notion.site/khanshaheb/React-Micro-frontend-and-Single-SPA-from-create-react-app-fbcd4cfee58641e7bbbe06970904afbb) or in this [Instructions.md](./Instructions.md) file.
 
-## Building and Running
+## Build and Run
 
 Only one command is enough to build and run the application:
 
